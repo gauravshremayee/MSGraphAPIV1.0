@@ -13,16 +13,16 @@ namespace MSGraphAPI
     {
         private const string V = "\n";
         private const int V1 = 2;
-        private static string clientId = "e528d78a-7851-4202-9473-e89542531c19";
+        private static string clientId = "XXXXXXX";
 
 
-        private static string tenantID = "1ab41d5a-8833-4af0-82be-e3c54d03997";
+        private static string tenantID = "XXXXXXXXXXXX";
 
 
-        private static string objectId = "0c54ed7a-95b1-4ebc-a460-125fcaf103e3";
+        private static string objectId = "XXXXXX";
 
 
-        private static string clientSecret = "H1H[t6rp78sB=v/dUvvicbCDrvyrtHk]";
+        private static string clientSecret = "XXXXXX";
 
         static async System.Threading.Tasks.Task Main(string[] args)
         {
@@ -33,7 +33,7 @@ namespace MSGraphAPI
             strToCheck = strToCheck.Replace("+", String.Empty).Replace("-", String.Empty).Replace(" ", String.Empty);
             Console.WriteLine(strToCheck);
 
-            string name = "Global IT Operations Murphy";
+            string name = "Global Admin";
 
             Console.WriteLine(name.Contains("al"));
 
@@ -50,16 +50,18 @@ namespace MSGraphAPI
             // Console.WriteLine(Regex.IsMatch(strToCheck, pattern, RegexOptions.IgnoreCase));
 
                 int Flag = 0;
-            var tenantId = "murphyoil.onmicrosoft.com";
+            var tenantId = "XXXXXX.onmicrosoft.com";
 
             // The client ID of the app registered in Azure AD
-            var clientId = "e528d78a-7851-4202-9473-e89542531c19";
+            var clientId = "XXXXX";
 
             // *Never* include client secrets in source code!
-            var clientSecret = "H1H[t6rp78sB=v/dUvvicbCDrvyrtHk]"; // Or some other secure place.
+            var clientSecret = "X"; // Or some other secure place.
 
             // The app registration should be configured to require access to permissions
             // sufficient for the Microsoft Graph API calls the app will be making, and
+            
+            
             // those permissions should be granted by a tenant administrator.
             // var scopes = new string[] {"https://graph.microsoft.com/.default"};
             var scopes = new string[] { "https://graph.microsoft.com/.default"   };
@@ -69,7 +71,7 @@ namespace MSGraphAPI
             // Configure the MSAL client as a confidential client
             var confidentialClient = ConfidentialClientApplicationBuilder
                 .Create(clientId)
-                .WithAuthority($"https://login.microsoftonline.com/murphyoil.onmicrosoft.com/v2.0")
+                .WithAuthority($"https://login.microsoftonline.com/XXXXXX.onmicrosoft.com/v2.0")
                 .WithClientSecret(clientSecret)
                 .Build();
 
@@ -158,6 +160,9 @@ namespace MSGraphAPI
                     else
                     {
                         condition = user.UserPrincipalName;
+                        
+                        
+                      
                     }
 
      
